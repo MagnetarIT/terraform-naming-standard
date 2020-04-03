@@ -9,11 +9,11 @@ locals {
     attributes = [""]
   }
 
-  
- default_tags = {
-    ManagedBy    = "Terraform"
+
+  default_tags = {
+    ManagedBy = "Terraform"
   }
-  
+
   asg_tag_map = {
     propagate_at_launch = "true"
   }
@@ -74,16 +74,16 @@ locals {
 
   # Context of this label to pass to other label modules
   output_context = {
-    enabled             = local.enabled
-    name                = local.name
-    namespace           = local.namespace
-    environment         = local.environment
-    attributes          = local.attributes
-    tags                = local.tags
-    delimiter           = local.delimiter
-    label_order         = local.label_order
-    regex_replace_chars = local.regex_replace_chars
-    additional_tag_map  = local.additional_tag_map
+    enabled                  = local.enabled
+    name                     = local.name
+    namespace                = local.namespace
+    environment              = local.environment
+    attributes               = local.attributes
+    tags                     = local.tags
+    delimiter                = local.delimiter
+    label_order              = local.label_order
+    regex_replace_chars      = local.regex_replace_chars
+    additional_tag_map       = local.additional_tag_map
     asg_tags_as_list_of_maps = local.asg_tags_as_list_of_maps
   }
 

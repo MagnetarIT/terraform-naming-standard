@@ -1,4 +1,5 @@
-[![Logo](https://magnetarconsulting.co.uk/wp-content/uploads/2020/04/small-helping-you-innovate-magnetar.png =300x)](https://magnetarconsulting.co.uk)
+<a href=https://magnetarconsulting.co.uk><img src="https://magnetarconsulting.co.uk/wp-content/uploads/2020/04/small-helping-you-innovate-magnetar.png" width="300"></a>
+
 # terraform-naming-standard
 Terraform (>= 0.12.0) module to output values in a consistent way for consistent naming
 

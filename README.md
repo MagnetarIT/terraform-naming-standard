@@ -4,6 +4,7 @@
 Terraform (>= 0.12.0) module to output values in a consistent way for consistent naming
 
 - [Intro](#Intro)
+- [Example](#Example)
 - [Inputs](#Inputs)
 - [Outputs](#Outputs)
 - [Support](#Support)
@@ -11,6 +12,47 @@ Terraform (>= 0.12.0) module to output values in a consistent way for consistent
 
 
 ----
+
+## Example
+```hcl
+  provider "aws" {
+    region = var.region
+  }
+
+  module "simple" {
+    source     = "git::https://github.com/MagnetarIT/terraform-naming-standard.git?ref=tags/0.1.0"
+    namespace  = var.namespace
+    stage      = var.stage
+    name       = var.name
+    delimiter  = var.delimiter
+    attributes = var.attributes
+    cidr_block = var.vpc_cidr_block
+    tags       = var.tags
+  }
+
+module "simple" {
+    source = "../"
+    namespace           = "mag"
+    environment         = "prod"
+    name                = "myapp"
+    attributes          = ["1"]
+}
+
+output "tags_as_list_of_maps" {
+  value = module.simple.tags_as_list_of_maps
+}
+
+output "tags" {
+  value = module.simple.tags
+}
+
+output "id" {
+  value = module.simple.id
+}
+```
+
+----
+
 ## Intro
 This module will return values formatted in a consistent way. This can be used to ensure all other modules conform to the same standard.
 
@@ -85,3 +127,4 @@ See [LICENSE](LICENSE) for full details.
     specific language governing permissions and limitations
     under the License.
 
+Original sourced from https://github.com/cloudposse/terraform-null-label

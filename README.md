@@ -16,7 +16,7 @@ Terraform (>= 0.12.0) module to output values in a consistent way for consistent
 ## Example
 ```hcl
 
- module "simple" {
+module "simple" {
     source     = "git::https://github.com/MagnetarIT/terraform-naming-standard.git?ref=tags/0.1.0"
     namespace  = "mag"
     name       = "app"

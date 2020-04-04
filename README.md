@@ -16,24 +16,12 @@ Terraform (>= 0.12.0) module to output values in a consistent way for consistent
 ## Example
 ```hcl
 
-  module "simple" {
+ module "simple" {
     source     = "git::https://github.com/MagnetarIT/terraform-naming-standard.git?ref=tags/0.1.0"
-    namespace  = var.namespace
-    stage      = var.stage
-    name       = var.name
-    delimiter  = var.delimiter
-    attributes = var.attributes
-    cidr_block = var.vpc_cidr_block
-    tags       = var.tags
+    namespace  = "mag"
+    name       = "app"
+    attributes = ["test"]
   }
-
-module "simple" {
-    source = "../"
-    namespace           = "mag"
-    environment         = "prod"
-    name                = "myapp"
-    attributes          = ["1"]
-}
 
 output "tags_as_list_of_maps" {
   value = module.simple.tags_as_list_of_maps
@@ -46,6 +34,7 @@ output "tags" {
 output "id" {
   value = module.simple.id
 }
+
 ```
 
 ----
